@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[机器学习引言]]></title>
+    <url>%2F2019%2F10%2F02%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80%2F</url>
+    <content type="text"><![CDATA[监督学习（Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo]]></title>
+    <url>%2F2019%2F09%2F30%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Hexo基本操作本地预览hexo s --debug 生成部署hexo g hexo d Markdown基本操作多行代码 使用三个反引号 在每一行前面缩进4个空格 ```key 代码块 ``` key可以为cpp,java,python，key进行高亮 单行代码使用反引号 ` 来标记或插入代码区段 eg：打印使用`代码`来进行输出]]></content>
+  </entry>
+</search>
