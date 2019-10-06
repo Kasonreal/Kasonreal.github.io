@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[机器学习引言]]></title>
     <url>%2F2019%2F10%2F02%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80%2F</url>
-    <content type="text"><![CDATA[监督学习（Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习]]></content>
+    <content type="text"><![CDATA[监督学习(Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 监督学习的类型 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习(Unsupervised learning)在未加标签的数据中，试图找到隐藏的结构。 非监督学习的类型聚类，降维*，隐马尔可夫模型*等。 聚类的应用： 谷歌新闻：将非常多的新闻事件自动地聚类到一起 基因学的应用：根据基因将个体聚类到不同的类或组 社交网络的分析：根据Facebook或email自动给出朋友的分组 市场分析]]></content>
       <categories>
         <category>机器学习</category>
       </categories>
