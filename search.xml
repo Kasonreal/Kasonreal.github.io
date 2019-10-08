@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[回归]]></title>
+    <url>%2F2019%2F10%2F08%2F%E5%9B%9E%E5%BD%92%2F</url>
+    <content type="text"><![CDATA[单变量线性回归(Linear Regression with One Variable)描述回归问题的标记$m$ 代表训练集中实例的数量 $x$ 代表特征/输入变量 $y$ 代表目标变量/输出变量 $\left( x,y \right)$ 代表训练集中的实例 $\left(x^\left(i\right),y^\left(i\right)\right)$ 代表第$i$ 个观察实例 $h$ 代表学习算法的解决方案或函数也称为假设（hypothesis） h的表达方式一种可能的表达方式为：$h_\theta \left( x \right)=\theta_{0} + \theta_{1}x$]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+      <tags>
+        <tag>回归</tag>
+        <tag>代价函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[机器学习引言]]></title>
     <url>%2F2019%2F10%2F02%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80%2F</url>
     <content type="text"><![CDATA[监督学习(Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 监督学习的类型 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习(Unsupervised learning)在未加标签的数据中，试图找到隐藏的结构。 非监督学习的类型聚类，降维*，隐马尔可夫模型*等。 聚类的应用： 谷歌新闻：将非常多的新闻事件自动地聚类到一起 基因学的应用：根据基因将个体聚类到不同的类或组 社交网络的分析：根据Facebook或email自动给出朋友的分组 市场分析]]></content>
