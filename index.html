@@ -284,6 +284,221 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/18/推荐系统实践/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kason">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/westbrook.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kason's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/10/18/推荐系统实践/" itemprop="url">推荐系统实践</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-18T14:47:27+08:00">
+                2019-10-18
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/推荐系统/" itemprop="url" rel="index">
+                    <span itemprop="name">推荐系统</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/18/推荐系统实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/18/推荐系统实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="好的推荐系统"><a href="#好的推荐系统" class="headerlink" title="好的推荐系统"></a>好的推荐系统</h1><p>随着信息技术和互联网的发展，人们逐渐从信息匮乏的时代走入了<strong>信息过载</strong>（information overload)  。为了解决信息过载问题，出现了<em>分类目录</em>（雅虎、hao123） 和 <em>搜索引擎</em>(google) 。  </p>
+<p>和搜索引擎一样，<strong>推荐系统</strong>也是一种帮助用户快速发现有用信息的工具。但是它不需要用户提供明确需求，而是通过分析用户的历史行为给用户的兴趣建模，从而主动给用户推荐。</p>
+<p><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82ef90esaj30g808s40r.jpg" alt="物品和用户.png"></p>
+<p>物品的<strong>长尾</strong>(long tail)<80%的销售额来自20%的热门品牌>。长尾商品代表一小部分用户的<strong>个性化需求</strong>。推荐系统通过发掘用户的行为，找到用户的个性化需求，从而将长尾商品准确地推荐给需要它的用户。</80%的销售额来自20%的热门品牌></p>
+<h2 id="个性化推荐系统的应用"><a href="#个性化推荐系统的应用" class="headerlink" title="个性化推荐系统的应用"></a>个性化推荐系统的应用</h2><p>几乎所有的推荐系统都是由前台的展示页面、后台的日志系统、推荐算法系统3部分构成</p>
+<h3 id="电子商务"><a href="#电子商务" class="headerlink" title="电子商务"></a>电子商务</h3><p>在亚马逊平台上  </p>
+<ol>
+<li>个性化推荐：基于物品、 基于好友  </li>
+<li>相关推荐列表：购买（浏览）过这个商品的用户购买的其它商品，然后进行<em>打包销售</em>（cross selling)</li>
+</ol>
+<h3 id="电影视频、音乐推荐"><a href="#电影视频、音乐推荐" class="headerlink" title="电影视频、音乐推荐"></a>电影视频、音乐推荐</h3><p>电影视频主要通过基于物品的推荐  </p>
+<p>音乐推荐是推荐系统里非常特殊的领域。具有一些特点  </p>
+<ul>
+<li>物品空间大  </li>
+<li>听一首歌耗时很少  </li>
+<li>物品重用率很高  </li>
+<li>上下文相关  </li>
+<li>次序很重要   </li>
+<li>不需要全神贯注  </li>
+<li>高度社会化</li>
+</ul>
+<p>以上特点决定了音乐是一种非常适合用来推荐的物品。</p>
+<h3 id="社交网络"><a href="#社交网络" class="headerlink" title="社交网络"></a>社交网络</h3><p>社交网络中的个性化推荐技术主要应用在三个方面：  </p>
+<ol>
+<li>利用用户的社交网络信息对用户进行个性化的物品推荐  </li>
+<li>信息流的会话推荐  </li>
+<li>推荐好友  </li>
+</ol>
+<h4 id="会话推荐"><a href="#会话推荐" class="headerlink" title="会话推荐"></a>会话推荐</h4><p>用户在Facebook上的每个分享和它的所有评论被称为一个<strong>会话</strong>，如何给这些会话排序是重要的。</p>
+<h3 id="个性化阅读、邮件，位置推荐"><a href="#个性化阅读、邮件，位置推荐" class="headerlink" title="个性化阅读、邮件，位置推荐"></a>个性化阅读、邮件，位置推荐</h3><h3 id="个性化广告（计算广告）"><a href="#个性化广告（计算广告）" class="headerlink" title="个性化广告（计算广告）"></a>个性化广告（计算广告）</h3><p>个性化广告与狭义个性化推荐的区别： 个性化推荐这种帮助用户找到可能令他们感兴趣的物品，而广告推荐着重帮助广告找到对他们感兴趣的用户。  </p>
+<p>个性化广告投放技术主要分3种：  </p>
+<ol>
+<li>上下文广告  </li>
+<li>搜索广告  </li>
+<li>个性化展示广告：  根据用户的兴趣</li>
+</ol>
+<h2 id="推荐系统的评测"><a href="#推荐系统的评测" class="headerlink" title="推荐系统的评测"></a>推荐系统的评测</h2><p>一个完整的推荐系统一般存在3个参与方：用户、物品提供者和提供推荐系统的网站。推荐系统是一个三方共赢的系统</p>
+<p><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82ef2mkd8j306d065mx8.jpg" alt="推荐三方.png"></p>
+<h3 id="推荐系统的实验方法"><a href="#推荐系统的实验方法" class="headerlink" title="推荐系统的实验方法"></a>推荐系统的实验方法</h3><h4 id="离线实验"><a href="#离线实验" class="headerlink" title="离线实验"></a>离线实验</h4><p>步骤  </p>
+<ol>
+<li>通过日志系统获取用户行为数据，按照一定标准生成一个数据集  </li>
+<li>将数据集划分成训练集和测试集  </li>
+<li>在训练集上训练用户兴趣模型，在测试集上进行预测  </li>
+<li>通过事先定义的离线指标评测算法在测试集上预测结果</li>
+</ol>
+<p>离线实验的优缺点如下：<br><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82elcr60dj30nb03kmxp.jpg" alt="离线实验优缺点.png"></p>
+<h4 id="用户调查"><a href="#用户调查" class="headerlink" title="用户调查"></a>用户调查</h4><p>在上线之前，需要做一次用户调查的测试。以减少直接上线的巨大风险。<br>  优点是：可以获得用户主观的感受，相对在线风险低。<br>缺点是：很难组织大规模的测试用户，测试环境下的用户行为和真实环境下可能有所不同</p>
+<h4 id="在线实验"><a href="#在线实验" class="headerlink" title="在线实验"></a>在线实验</h4><p><strong>AB测试</strong>是一种常见的在线评测算法的实验方法。通过一定的规则将用户随机分成几组，并对不同组的用户采用不同的算法，然后统计不同组用户的各种不同的评测指标。<br>优点：公平<br>缺点：周期长，所以一般只测试在离线实验和用户调查中表现好的算法。AB测试设计也是一项复杂的工程（一般不同层及控制这些层的团队需要从一个统一的地方获得自己AB测试的流量，不同层之间的流量应该是正交的）</p>
+<p>AB测试系统：<br><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82exdq4c6j30gj07bglu.jpg" alt="AB测试.png"></p>
+<p>一个新的推荐算法最终上线，需要完成以上3个实验  </p>
+<ol>
+<li>离线实验证明它在很多离线指标上优于现有的算法  </li>
+<li>用户调查保证满意度  </li>
+<li>AB测试确定优越性</li>
+</ol>
+<h3 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h3><h4 id="用户满意度"><a href="#用户满意度" class="headerlink" title="用户满意度"></a>用户满意度</h4><p>用户满意度不能通过离线实验得到，只能通过用户调查或者在线实验。<br>用户调查主要使用调查问卷<br>在线实验可以通过点击率、停留时间、转化率等指标</p>
+<h4 id="预测准确度"><a href="#预测准确度" class="headerlink" title="预测准确度"></a>预测准确度</h4><p>最重要的<strong>离线</strong>评测指标。准确度有几个方向 </p>
+<ul>
+<li>评分预测</li>
+</ul>
+<p>$ \sqrt{32} $</p>
+<p>$ RAM=\frac{\sum _{u,i\in T} \mid r_{ui}  - \hat{r_{ui}|}}{|T|} $​​</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/10/08/回归/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -393,7 +608,7 @@
 <p>$\left( x,y \right)$ 代表训练集中的实例</p>
 <p>$\left(x^\left(i\right),y^\left(i\right)\right)$ 代表第$i$ 个观察实例</p>
 <p>$h$  代表学习算法的解决方案或函数也称为假设（<strong>hypothesis</strong>）</p>
-<p><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g7qmg2biwlj309f07jweb.jpg" alt="回归算法.png"></p>
+<p><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g7qq9p01v9j309f07jweb.jpg" alt="回归流程.png"></p>
 <h3 id="h的表达方式"><a href="#h的表达方式" class="headerlink" title="h的表达方式"></a>h的表达方式</h3><p>一种可能的表达方式为：$h_\theta \left( x \right)=\theta_{0} + \theta_{1}x$</p>
 
           
@@ -792,7 +1007,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -803,7 +1018,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -814,7 +1029,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1473,7 +1688,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("回归");titles.push("机器学习引言");titles.push("Hexo");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("推荐系统实践");titles.push("回归");titles.push("机器学习引言");titles.push("Hexo");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
