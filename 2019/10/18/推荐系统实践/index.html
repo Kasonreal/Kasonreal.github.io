@@ -91,7 +91,8 @@
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006M8Ovlly1g82ef2mkd8j306d065mx8.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006M8Ovlly1g82elcr60dj30nb03kmxp.jpg">
 <meta property="og:image" content="http://ww1.sinaimg.cn/large/006M8Ovlly1g82exdq4c6j30gj07bglu.jpg">
-<meta property="og:updated_time" content="2019-10-18T12:19:31.890Z">
+<meta property="og:image" content="http://ww1.sinaimg.cn/large/006M8Ovlly1g82q4tdgtij307c06lq2y.jpg">
+<meta property="og:updated_time" content="2019-10-18T14:39:20.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="推荐系统实践">
 <meta name="twitter:description" content="好的推荐系统随着信息技术和互联网的发展，人们逐渐从信息匮乏的时代走入了信息过载（information overload)  。为了解决信息过载问题，出现了分类目录（雅虎、hao123） 和 搜索引擎(google) 。   和搜索引擎一样，推荐系统也是一种帮助用户快速发现有用信息的工具。但是它不需要用户提供明确需求，而是通过分析用户的历史行为给用户的兴趣建模，从而主动给用户推荐。  物品的长尾(">
@@ -435,22 +436,63 @@
 <li>通过事先定义的离线指标评测算法在测试集上预测结果</li>
 </ol>
 <p>离线实验的优缺点如下：<br><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82elcr60dj30nb03kmxp.jpg" alt="离线实验优缺点.png"></p>
-<h4 id="用户调查"><a href="#用户调查" class="headerlink" title="用户调查"></a>用户调查</h4><p>在上线之前，需要做一次用户调查的测试。以减少直接上线的巨大风险。<br>  优点是：可以获得用户主观的感受，相对在线风险低。<br>缺点是：很难组织大规模的测试用户，测试环境下的用户行为和真实环境下可能有所不同</p>
+<h4 id="用户调查"><a href="#用户调查" class="headerlink" title="用户调查"></a>用户调查</h4><p>在上线之前，需要做一次用户调查的测试。以减少直接上线的巨大风险。<br>优点是：可以获得用户主观的感受，相对在线风险低。<br>缺点是：很难组织大规模的测试用户，测试环境下的用户行为和真实环境下可能有所不同</p>
 <h4 id="在线实验"><a href="#在线实验" class="headerlink" title="在线实验"></a>在线实验</h4><p><strong>AB测试</strong>是一种常见的在线评测算法的实验方法。通过一定的规则将用户随机分成几组，并对不同组的用户采用不同的算法，然后统计不同组用户的各种不同的评测指标。<br>优点：公平<br>缺点：周期长，所以一般只测试在离线实验和用户调查中表现好的算法。AB测试设计也是一项复杂的工程（一般不同层及控制这些层的团队需要从一个统一的地方获得自己AB测试的流量，不同层之间的流量应该是正交的）</p>
 <p>AB测试系统：<br><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82exdq4c6j30gj07bglu.jpg" alt="AB测试.png"></p>
+<blockquote>
 <p>一个新的推荐算法最终上线，需要完成以上3个实验  </p>
 <ol>
 <li>离线实验证明它在很多离线指标上优于现有的算法  </li>
 <li>用户调查保证满意度  </li>
 <li>AB测试确定优越性</li>
 </ol>
+</blockquote>
 <h3 id="评测指标"><a href="#评测指标" class="headerlink" title="评测指标"></a>评测指标</h3><h4 id="用户满意度"><a href="#用户满意度" class="headerlink" title="用户满意度"></a>用户满意度</h4><p>用户满意度不能通过离线实验得到，只能通过用户调查或者在线实验。<br>用户调查主要使用调查问卷<br>在线实验可以通过点击率、停留时间、转化率等指标</p>
 <h4 id="预测准确度"><a href="#预测准确度" class="headerlink" title="预测准确度"></a>预测准确度</h4><p>最重要的<strong>离线</strong>评测指标。准确度有几个方向 </p>
 <ul>
-<li>评分预测</li>
+<li>评分预测<br>一般通过均方根误差(RMSE)和平均绝对误差(RAM)计算  </li>
 </ul>
-<p>$ \sqrt{32} $</p>
-<p>$ RAM=\frac{\sum _{u,i\in T}| \mid r_{ui}  - \hat{r}_{ui}|}{|T|} $​​</p>
+<p>令$r_{ui}$是用户u对物品i的实际评分，而$\hat{r}_{ui}$是推荐算法给出的预测评分</p>
+<script type="math/tex; mode=display">
+RMSE=\frac{\sqrt{\sum _{u,i\in T} ( r_{ui}  - \hat{r}_{ui})^2}}{|T|}</script><script type="math/tex; mode=display">
+RAM=\frac{\sum _{u,i\in T} | r_{ui}  - \hat{r}_{ui}|}{|T|}</script><blockquote>
+<p>如果评分系统是基于整数建立的（即用户给的评分都是整数），那么对预测结果取整会降低MAE的误差</p>
+</blockquote>
+<ul>
+<li>TopN推荐<br>TopN推荐的准确率一般通过准确率（precision)，召回率（recall)度量  </li>
+</ul>
+<p>令R(u)是根据用户在训练集上的行为给用户做出的推荐列表，而T(u）是用户在测试集上的行为列表</p>
+<p>召回率定义为：  </p>
+<script type="math/tex; mode=display">
+Recall=\frac{\sum_ {u\in U} | R(u) \cap T(u)|}{\sum_{u\in U} | T(u) |}</script><p>准确率定义为：</p>
+<script type="math/tex; mode=display">
+Recall=\frac{\sum_ {u\in U} | R(u) \cap T(u)|}{\sum_{u\in U} | R(u) |}</script><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">PrecisionRecall</span><span class="params">(test, N)</span>:</span></span><br><span class="line">	hit = <span class="number">0</span></span><br><span class="line">	n_recall = <span class="number">0</span></span><br><span class="line">	n_precision = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> user, items <span class="keyword">in</span> test.items():</span><br><span class="line">        rank = Recommend(user, N)</span><br><span class="line">		hit += len(rank &amp; items)</span><br><span class="line">		n_recall += len(items)</span><br><span class="line">		n_precision += N</span><br><span class="line">	<span class="keyword">return</span> [hit / (<span class="number">1.0</span> * n_recall), hit / (<span class="number">1.0</span> * n_precision)]</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>有时候，为了全面评测TopN推荐的准确率和召回率，会选取不同的推荐列表长度N，计算出一组准确率、召回率</p>
+</blockquote>
+<h4 id="覆盖率"><a href="#覆盖率" class="headerlink" title="覆盖率"></a>覆盖率</h4><p><strong>覆盖率</strong>（coverage)描述一个推荐系统对物品长尾的发掘能力。最简单的定义为推荐系统能够推荐出来的物品占总物品集合的比例。</p>
+<p>假设系统的用户集合为U,推荐系统给每一个用户推荐一个长度为N的物品列表R(u)。</p>
+<script type="math/tex; mode=display">
+Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推荐系统发掘长尾的能力，需要统计推荐列表中不同物品出现次数的分布。如果这个分布<strong>较平</strong>，则覆盖率<strong>高</strong>。有两个指标可以用来定义覆盖率</p>
+<ul>
+<li>信息熵<br>概率分布越<strong>平均</strong>，<strong>信息熵越大</strong>，<strong>覆盖率越大</strong>。  <script type="math/tex; mode=display">H=-\sum_i^n p(i)\log{p(i)}</script></li>
+</ul>
+<p>这里p(i)是物品i的流行度除以所有物品流行度之和</p>
+<blockquote>
+<p>物品流行度： 有多少用户与该物品发生关系</p>
+</blockquote>
+<ul>
+<li>基尼系数（Gini Index):<script type="math/tex; mode=display">G=\frac{1}{n-1}\sum_{j=1}^n(2j-n-1)p(i_j)</script></li>
+</ul>
+<p>这里，$i_j$是按照物品流行度p()从小到大排序的物品列表中第j个物品。</p>
+<blockquote>
+<p>基尼系数的计算原理：<br>基尼系数=SA/(SA+SB),如果系统的流行度很平均，那么SA就会很小，分配不均匀,基尼系数很大</p>
+</blockquote>
+<p>曲线表示最不热门的x%物品的总流行度占系统的比例y%<br><img src="http://ww1.sinaimg.cn/large/006M8Ovlly1g82q4tdgtij307c06lq2y.jpg" alt="基尼系数.png"></p>
+<p>如果G1是从初始用户行为中计算出的物品流行度的基尼系数，G2是从推荐列表中计算出来的。如果G2&gt;G1,说明推荐算法具有<em>马太效应</em>。系统还需优化。</p>
+<blockquote>
+<p>马太效应：前者更强，弱者更弱。热门的物品更加热门，冷门更加冷门。推荐系统的初衷就是希望消除马太效应</p>
+</blockquote>
 
       
     </div>
@@ -665,7 +707,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#好的推荐系统"><span class="nav-number">1.</span> <span class="nav-text">好的推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化推荐系统的应用"><span class="nav-number">1.1.</span> <span class="nav-text">个性化推荐系统的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电子商务"><span class="nav-number">1.1.1.</span> <span class="nav-text">电子商务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电影视频、音乐推荐"><span class="nav-number">1.1.2.</span> <span class="nav-text">电影视频、音乐推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社交网络"><span class="nav-number">1.1.3.</span> <span class="nav-text">社交网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#会话推荐"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">会话推荐</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个性化阅读、邮件，位置推荐"><span class="nav-number">1.1.4.</span> <span class="nav-text">个性化阅读、邮件，位置推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个性化广告（计算广告）"><span class="nav-number">1.1.5.</span> <span class="nav-text">个性化广告（计算广告）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐系统的评测"><span class="nav-number">1.2.</span> <span class="nav-text">推荐系统的评测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐系统的实验方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">推荐系统的实验方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#离线实验"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">离线实验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户调查"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">用户调查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线实验"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">在线实验</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评测指标"><span class="nav-number">1.2.2.</span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户满意度"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">用户满意度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预测准确度"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">预测准确度</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#好的推荐系统"><span class="nav-number">1.</span> <span class="nav-text">好的推荐系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#个性化推荐系统的应用"><span class="nav-number">1.1.</span> <span class="nav-text">个性化推荐系统的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#电子商务"><span class="nav-number">1.1.1.</span> <span class="nav-text">电子商务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#电影视频、音乐推荐"><span class="nav-number">1.1.2.</span> <span class="nav-text">电影视频、音乐推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#社交网络"><span class="nav-number">1.1.3.</span> <span class="nav-text">社交网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#会话推荐"><span class="nav-number">1.1.3.1.</span> <span class="nav-text">会话推荐</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个性化阅读、邮件，位置推荐"><span class="nav-number">1.1.4.</span> <span class="nav-text">个性化阅读、邮件，位置推荐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#个性化广告（计算广告）"><span class="nav-number">1.1.5.</span> <span class="nav-text">个性化广告（计算广告）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推荐系统的评测"><span class="nav-number">1.2.</span> <span class="nav-text">推荐系统的评测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#推荐系统的实验方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">推荐系统的实验方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#离线实验"><span class="nav-number">1.2.1.1.</span> <span class="nav-text">离线实验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户调查"><span class="nav-number">1.2.1.2.</span> <span class="nav-text">用户调查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在线实验"><span class="nav-number">1.2.1.3.</span> <span class="nav-text">在线实验</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#评测指标"><span class="nav-number">1.2.2.</span> <span class="nav-text">评测指标</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#用户满意度"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">用户满意度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#预测准确度"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">预测准确度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#覆盖率"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">覆盖率</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
