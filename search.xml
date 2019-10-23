@@ -33,7 +33,7 @@
   </entry>
   <entry>
     <title><![CDATA[Hexo]]></title>
-    <url>%2F2019%2F09%2F30%2FHexo%2F</url>
+    <url>%2F2019%2F09%2F30%2Fhello-world%2F</url>
     <content type="text"><![CDATA[Hexo基本操作本地预览hexo s --debug 生成部署hexo g hexo d Markdown基本操作多行代码 使用三个反引号 在每一行前面缩进4个空格 ```key 代码块 ``` key可以为cpp,java,python，key进行高亮 单行代码使用反引号 ` 来标记或插入代码区段 eg：打印使用`代码`来进行输出]]></content>
   </entry>
 </search>
