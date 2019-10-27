@@ -610,7 +610,7 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 <p>在离线实验中，最<strong>原始</strong>的UserCF和ItemCF中，往往ItemCF各项指标都不如UserCF.</p>
 </blockquote>
 <h4 id="哈利波特问题"><a href="#哈利波特问题" class="headerlink" title="哈利波特问题"></a>哈利波特问题</h4><p>加大对物品的惩罚：</p>
-<script type="math/tex; mode=display">w_{ij} = \frac{|N(i)\capN(j)|}{|N(i)|^{1-\alpha} |N(j)^\alpha |}</script><p>其中α∈[0.5,1]。通过提高α，可以惩罚热门的j。<br>从离线实验中，α只有在取值为0.5时才会导致最高的准确率和召回率。α越大，覆盖率越高，平均结果的平均人们会降低。可以通过这种方法适当牺牲准确率和召回率来提高覆盖率和新颖性。</p>
+<script type="math/tex; mode=display">w_{ij} = \frac{|N(i)\cap N(j)|}{|N(i)|^{1-\alpha} |N(j)^\alpha |}</script><p>其中α∈[0.5,1]。通过提高α，可以惩罚热门的j。<br>从离线实验中，α只有在取值为0.5时才会导致最高的准确率和召回率。α越大，覆盖率越高，平均结果的平均人们会降低。可以通过这种方法适当牺牲准确率和召回率来提高覆盖率和新颖性。</p>
 <blockquote>
 <p>两个不同领域的最热门物品之间往往具有比较高的相似度。这时，仅仅依靠用户行为数据是不能解决的。只能依靠引入物品的内容数据解决这个问题。比如对不同领域的物品降低权重</p>
 </blockquote>
