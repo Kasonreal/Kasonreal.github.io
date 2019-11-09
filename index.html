@@ -351,20 +351,19 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/18/推荐系统实践/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/18/推荐系统实践/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
-          
-             <span id="/2019/10/18/推荐系统实践/" class="leancloud_visitors" data-flag-title="推荐系统实践">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -802,20 +801,19 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/08/回归/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/08/回归/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
-          
-             <span id="/2019/10/08/回归/" class="leancloud_visitors" data-flag-title="回归">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -964,20 +962,19 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/10/02/机器学习引言/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/10/02/机器学习引言/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
-          
-             <span id="/2019/10/02/机器学习引言/" class="leancloud_visitors" data-flag-title="机器学习引言">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1110,20 +1107,19 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/09/30/hello world/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/09/30/hello world/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
-          
-             <span id="/2019/09/30/hello world/" class="leancloud_visitors" data-flag-title="Hexo">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
           
 
           
@@ -1310,6 +1306,10 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
                 
                   <li class="links-of-blogroll-item">
                     <a href="https://tristone13th.github.io/" title="云中君" target="_blank">云中君</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="101.201.69.42" title="木偶" target="_blank">木偶</a>
                   </li>
                 
               </ul>
@@ -1499,6 +1499,28 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'R4rICLTQsNXFhLpVLOKUtwY8-MdYXbMMI',
+        appKey: 'a3s2kYOiN3ocHpSSUvnOw2BM',
+        placeholder: '来说两句吧',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
@@ -1826,74 +1848,6 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
 
 
   
-  
-  <script>
-    
-    function showTime(Counter) {
-      var entries = [];
-      var $visitors = $('.leancloud_visitors');
-
-      $visitors.each(function() {
-        entries.push( $(this).attr('id').trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { '$in': entries } }) })
-        .done(function({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for (var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if (countSpan.text() == '') {
-              countSpan.text(0);
-            }
-          }
-        })
-        .fail(function ({ responseJSON }) {
-          console.log('LeanCloud Counter Error: ' + responseJSON.code + ' ' + responseJSON.error);
-        });
-    }
-    
-
-    $(function() {
-      $.get('https://app-router.leancloud.cn/2/route?appId=' + 'R4rICLTQsNXFhLpVLOKUtwY8-MdYXbMMI')
-        .done(function({ api_server }) {
-          var Counter = function(method, url, data) {
-            return $.ajax({
-              method: method,
-              url: 'https://' + api_server + '/1.1' + url,
-              headers: {
-                'X-LC-Id': 'R4rICLTQsNXFhLpVLOKUtwY8-MdYXbMMI',
-                'X-LC-Key': 'a3s2kYOiN3ocHpSSUvnOw2BM',
-                'Content-Type': 'application/json',
-              },
-              data: data
-            });
-          };
-          
-            if ($('.post-title-link').length >= 1) {
-              showTime(Counter);
-            }
-          
-        });
-    });
-  </script>
-
-
   
 
   
