@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization]]></title>
+    <url>%2F2019%2F11%2F13%2FLearning%20Geo-Social%20User%20Topical%20Profiles%20with%20Bayesian%20Hierarchical%20User%20Factorization%2F</url>
+    <content type="text"><![CDATA[Title 使用贝叶斯分层用户分解学习地理-社交用户画像 Research Objective在社会空间系统中，实现地理位置和用户画像的交互 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑 每个用户在不同地方被不同感知 具有相似画像的用户可能有巨大的地缘影响差异 建模地理画像挑战 经常分散，由于用户异质性，地理画像中的受欢迎程度计数存在很大差异 由于多维性，通常非常稀疏 先前研究 用户聚合标签被用于生成用户地理画像 研究基于内容、评分的画像 Method(s) 为了克服异质性，提出了一个两层的贝叶斯层级用户分解生成框架（bHUF），该框架很容易推广到深度用户分解。 为了减少稀疏性，研究用户上下文（特别是地理位置和社会关系），针对多层因式分解方案的非共轭性,提出一个增强模型（bHUF+）。然后，使用NB分布的数据增强方案，开发一种有效的封闭式吉布斯抽样方案进行推理 两层贝叶斯分层用户分解，将泊松伽马信念网络从二维非负计数推广到多维异构计数。与单层分解相比，用户分解的额外层通过允许更大的用户地理位置分布方差-均值比，比单层具有的学习。更好地处理过度分散和用户异质性。 Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ 根据GPS标记的Twitter数据集上的几个基线，对bHUF和bHUF+进行了评估，观察到bHUF在最佳替代单层基线的精确度和召回率上提高了约5%~13%，对用户地理位置和社会环境的改善率提高了6%~11% Evaluation作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
+      <categories>
+        <category>论文合集</category>
+      </categories>
+      <tags>
+        <tag>用户画像</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[推荐系统可解释性]]></title>
     <url>%2F2019%2F11%2F13%2F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7%2F</url>
     <content type="text"><![CDATA[Introduction解释的两个维度： 显示样式（display style）： 相关用户或项目 用户或项目特征 文本解释 图像解释 社会解释 词簇 模型/方法 基于邻域 矩阵分解 主题建模 基于图 深度学习 知识图谱 关联分析 两种可解释性： 以人为方式工作的可解释模型。目前大多数属于这一类 只关注产品，将推荐模型视为一个复杂的黑盒。称为事后可解释性。 可解释性与时效性： 近些年的研究表明，这两项并不冲突，可以使用深度学习等方法来解决。]]></content>
@@ -14,7 +25,7 @@
   <entry>
     <title><![CDATA[文献阅读方法]]></title>
     <url>%2F2019%2F11%2F13%2F%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E6%96%B9%E6%B3%95%2F</url>
-    <content type="text"><![CDATA[阅读文献Abstract 作者想要解决什么问题？ question 作者通过什么理论/模型来解决这个问题？ method 作者给出的答案是什么？ answer Introduction 作者为什么研究这个课题？ 目前这个课题的研究进行到了哪一个阶段？ 作者使用的理论是基于哪些假设? Conclusion 这篇文章存在哪些缺陷？ 作者关于这个课题的构思是哪几点？ Table数据来源+重要指标+模型步骤+每个步骤得出的结论 归纳 笔记框架 Title文章标题 Research Objective作者的研究目标 Background and Problems我们要研究这个课题？这个课题研究进行到哪个阶段？基于哪些假设？ Method(s)作者解决问题的理论/模型？是否基于前人的方法？ Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ Evalution作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
+    <content type="text"><![CDATA[阅读文献Abstract 作者想要解决什么问题？ question 作者通过什么理论/模型来解决这个问题？ method 作者给出的答案是什么？ answer Introduction 作者为什么研究这个课题？ 目前这个课题的研究进行到了哪一个阶段？ 作者使用的理论是基于哪些假设? Conclusion 这篇文章存在哪些缺陷？ 作者关于这个课题的构思是哪几点？ Table数据来源+重要指标+模型步骤+每个步骤得出的结论 归纳 笔记框架 Title文章标题 Research Objective作者的研究目标 Background and Problems我们要研究这个课题？这个课题研究进行到哪个阶段？基于哪些假设？ Method(s)作者解决问题的理论/模型？是否基于前人的方法？ Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ Evaluation作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
       <categories>
         <category>论文合集</category>
       </categories>

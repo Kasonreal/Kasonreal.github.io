@@ -284,6 +284,194 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Kason">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/westbrook.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kason's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/11/13/Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization/" itemprop="url">Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-13T20:25:47+08:00">
+                2019-11-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/论文合集/" itemprop="url" rel="index">
+                    <span itemprop="name">论文合集</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/11/13/Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/11/13/Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h1><p> 使用<strong>贝叶斯分层用户分解</strong>学习地理-社交用户画像 </p>
+<h2 id="Research-Objective"><a href="#Research-Objective" class="headerlink" title="Research Objective"></a>Research Objective</h2><p>在社会空间系统中，实现地理位置和用户画像的交互</p>
+<h2 id="Background-and-Problems"><a href="#Background-and-Problems" class="headerlink" title="Background and Problems"></a>Background and Problems</h2><ol>
+<li>虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑</li>
+</ol>
+<ul>
+<li>每个用户在不同地方被不同感知</li>
+<li>具有相似画像的用户可能有巨大的地缘影响差异</li>
+</ul>
+<p><strong>建模地理画像挑战</strong></p>
+<ul>
+<li>经常分散，由于用户异质性，地理画像中的受欢迎程度计数存在很大差异</li>
+<li>由于多维性，通常非常稀疏</li>
+</ul>
+<ol>
+<li>先前研究</li>
+</ol>
+<ul>
+<li>用户聚合标签被用于生成用户地理画像</li>
+<li>研究基于内容、评分的画像</li>
+</ul>
+<h2 id="Method-s"><a href="#Method-s" class="headerlink" title="Method(s)"></a>Method(s)</h2><ol>
+<li>为了克服异质性，提出了一个两层的贝叶斯层级用户分解生成框架（bHUF），该框架很容易推广到深度用户分解。</li>
+<li>为了减少稀疏性，研究用户上下文（特别是地理位置和社会关系），针对多层因式分解方案的非共轭性,提出一个增强模型（bHUF+）。然后，使用NB分布的数据增强方案，开发一种有效的封闭式<strong>吉布斯抽样</strong>方案进行推理</li>
+</ol>
+<ul>
+<li>两层贝叶斯分层用户分解，将泊松伽马信念网络从二维非负计数推广到多维异构计数。与单层分解相比，用户分解的额外层通过允许更大的用户地理位置分布方差-均值比，比单层具有的学习。更好地处理过度分散和用户异质性。</li>
+</ul>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？</p>
+<p>根据GPS标记的Twitter数据集上的几个基线，对bHUF和bHUF+进行了评估，观察到bHUF在最佳替代单层基线的精确度和召回率上提高了约5%~13%，对用户地理位置和社会环境的改善率提高了6%~11% </p>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><p>作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方</p>
+<p>数据来源+重要指标+模型步骤+每个步骤得出的结论</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述</p>
+<h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p>额外笔记</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>(optional)列出相关性高的文献，一遍之后可以继续track</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/13/推荐系统可解释性/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -591,7 +779,7 @@
 <h2 id="Background-and-Problems"><a href="#Background-and-Problems" class="headerlink" title="Background and Problems"></a>Background and Problems</h2><p>我们要研究这个课题？这个课题研究进行到哪个阶段？基于哪些假设？</p>
 <h2 id="Method-s"><a href="#Method-s" class="headerlink" title="Method(s)"></a>Method(s)</h2><p>作者解决问题的理论/模型？是否基于前人的方法？</p>
 <h2 id="Conclusion-1"><a href="#Conclusion-1" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？</p>
-<h2 id="Evalution"><a href="#Evalution" class="headerlink" title="Evalution"></a>Evalution</h2><p>作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方</p>
+<h2 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h2><p>作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方</p>
 <p>数据来源+重要指标+模型步骤+每个步骤得出的结论</p>
 <h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述</p>
 <h2 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h2><p>额外笔记</p>
@@ -1627,7 +1815,7 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1649,7 +1837,7 @@ Coverage=\frac{|\cup_{u\in U}R(u)|}{|I|}</script><p>为了更细致地描述推�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
