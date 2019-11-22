@@ -1,6 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[机器学习]]></title>
+    <url>%2F2019%2F11%2F22%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[机器学习引言监督学习(Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 监督学习的类型 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习(Unsupervised learning)在未加标签的数据中，试图找到隐藏的结构。 非监督学习的类型聚类，降维，隐马尔可夫模型等。 聚类的应用： 谷歌新闻：将非常多的新闻事件自动地聚类到一起 基因学的应用：根据基因将个体聚类到不同的类或组 社交网络的分析：根据Facebook或email自动给出朋友的分组 市场分析 线性回归(Linear Regression)描述回归问题的标记$m$ 代表训练集中实例的数量 $x$ 代表特征/输入变量 $y$ 代表目标变量/输出变量 $\left( x,y \right)$ 代表训练集中的实例 $\left(x^\left(i\right),y^\left(i\right)\right)$ 代表第$i$ 个观察实例 $h$ 代表学习算法的解决方案或函数也称为假设（hypothesis） h的表达形式： 一种表达形式 $h_\theta \left( x \right)=\theta_{0} + \theta_{1}x_1 +···+\theta_nx_n$ 代价函数：（均方误差） $J(\theta_0,\theta_1,···\theta_n)=\frac{1}{2m}\sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2$ 这里除以m是希望之后计算梯度时大小不随样本数量的增多而增大 批量梯度下降算法： $\theta_j:=\theta_j-\alpha\frac{\partial }{\partial \theta_j}J(\theta_0,\theta_1,···\theta_n) $ 线性回归问题可以改写为： $\theta_0:=\theta_0-\alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)}·x_0^{(i)})$ $x_0^{(i)}=1$ $\theta_1:=\theta_1-\alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)}·x_1^{(i)})$ $···$ 123456789101112131415theta = np.zeros(X.shape[1]) # theta代表特征（变量）数def gradient(theta, X, y): # 求导，这里将x0赋为1，同其他变量一起求导 m = X.shape[0] # 样本数 inner = X.T @ (X @ theta - y) return inner / mdef batch_gradient_decent(theta, X, y, epoch, alpha=0.01): _theta = theta.copy() cost_data = [lr_cost(theta, X, y)] for _ in range(epoch): _theta = _theta - alpha * gradient(_theta, X, y) cost_data.append(lr_cost(_theta, X, y)) return _theta, cost_data 梯度下降实践特征缩放 最简单的方法: $x_n=\frac{x_n-\mu_n}{s_n}$，其中$\mu_n$是平均值，$s_n$是范围 学习率 画出代价函数随迭代次数的图像。若出现上升情形，很可能是因为学习率$\alpha$取值过大 通常考虑$\alpha=0.03,0.3,1,3,10$ 正规方程算术求解出最优$\theta$ $\theta=(X^TX)^{-1}X^Ty$ 大多数情况下，$(X^TX)^{-1}$是可逆的，若不可逆，有以下两种情况： 特征值里有一些多余的特征，如果其中$x_1$和$x_2$是线性相关的，会导致不可逆，我们需要删除重复特征里的其中一个 特征数量太多(m&lt;=n)，导致不可逆。可以用较少的特征来反映尽可能多内容，或者考虑使用正规化的方法。 $\theta$的推导过程（略） 逻辑回归在分类问题中，逻辑回归（Logistic Regression)是目前最流行使用最广泛的一种学习算法。 二分类模型假设 $h_\theta(x)=g(\theta^TX)$ 其中 X代表特征向量，g代表逻辑函数 一个常用的逻辑函数为S形函数，公式为$g(z)=\frac{1}{1+e^{-z}}$ 代价函数（交叉熵） 若仍使用平方误差，得到的代价函数是非凸函数，因此采用交叉熵 $J(\theta ) = -\frac{1}{m}\left[\sum_{i=1}^{m}y^{(i)}log(h_\theta (x^{(i)}))+(1-y^{(i)})log(1-h_\theta (x^{(i)})) \right]$ 其中，$h_\theta (x^{(i)}) = \frac{1}{1+e^{-\theta^\mathrm {T} x}}$ 梯度下降 $\frac{\partial J(\theta)}{\partial \theta_{j}} = \frac{1}{m}\left[\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_{j}^{(i)}\right]$ $\theta_j:=\theta_j-\alpha\frac{1}{m}\left[\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})x_{j}^{(i)}\right]$ 即使更新参数的规则看起来和线性回归一致，由于假设的定义发生了变化，所以是完全不同的 高级优化 除了梯度下降法，我们还可以采用其他方法进行优化，比如共轭梯度法，BFGS（变尺度法），L-BFGS（限制变尺度法）。这三种算法不需要手动选择学习率$\alpha$，它们内部有一个线性搜索算法 一对多使用二分类的思想，将一个类别标记为正向类，其他的所有类标记为负向类，进行多次分类。 得到的一系列模型记为： $h_\theta^{(i)}(x)=p(y=i|x;\theta)$其中：i=(1,2,…k) 目标 $\max_i h_\theta^{(i)}(x)$ 在n个分类器中输入x，选择一个让$h_\theta^{(i)}(x)$最大的i]]></content>
+      <categories>
+        <category>机器学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Tensorflow2.0]]></title>
+    <url>%2F2019%2F11%2F15%2FTensorflow2.0%E4%B8%8E%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[Tensorflow 基础数据类型数值类型在Tensorflow中，为了表示方便，一般把标量、向量、矩阵统称为张量（Tensor） 通过打印张量信息，得到 123456In [2]: x = tf.constant([1,2.,3.3])xOut[2]:&lt;tf.Tensor: id=165, shape=(3,), dtype=float32, numpy=array([1. , 2. , 3.3],dtype=float32)&gt; 其中id是TensorFlow中内部索引对象的编号，shape表示张量的形状，dtype表示张量的精度，张量numpy（）方法可以返回Numpy.array类型的数据 x.numpy() 返回Numpy.array类型的数据 tf.constant([[1,2], [3,4]]) 定义2维张量 字符串类型提供常见的join()，length()，split()，lower()等工具函数 布尔类型 Tensorflow的布尔类型和Python语言的布尔类型不对等 123456In [11]:a = tf.constant(True) # 创建布尔张量a == TrueOut[11]:False 数值精度]]></content>
+      <categories>
+        <category>深度学习</category>
+      </categories>
+      <tags>
+        <tag>深度学习</tag>
+        <tag>Tensorflow</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization]]></title>
     <url>%2F2019%2F11%2F13%2FLearning%20Geo-Social%20User%20Topical%20Profiles%20with%20Bayesian%20Hierarchical%20User%20Factorization%2F</url>
     <content type="text"><![CDATA[Title 使用贝叶斯分层用户分解学习地理-社交用户画像 Research Objective在社会空间系统中，实现地理位置和用户画像的交互 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑 每个用户在不同地方被不同感知 具有相似画像的用户可能有巨大的地缘影响差异 建模地理画像挑战 经常分散，由于用户异质性，地理画像中的受欢迎程度计数存在很大差异 由于多维性，通常非常稀疏 先前研究 用户聚合标签被用于生成用户地理画像 研究基于内容、评分的画像 Method(s) 为了克服异质性，提出了一个两层的贝叶斯层级用户分解生成框架（bHUF），该框架很容易推广到深度用户分解。 为了减少稀疏性，研究用户上下文（特别是地理位置和社会关系），针对多层因式分解方案的非共轭性,提出一个增强模型（bHUF+）。然后，使用NB分布的数据增强方案，开发一种有效的封闭式吉布斯抽样方案进行推理 两层贝叶斯分层用户分解，将泊松伽马信念网络从二维非负计数推广到多维异构计数。与单层分解相比，用户分解的额外层通过允许更大的用户地理位置分布方差-均值比，比单层具有的学习。更好地处理过度分散和用户异质性。 Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ 根据GPS标记的Twitter数据集上的几个基线，对bHUF和bHUF+进行了评估，观察到bHUF在最佳替代单层基线的精确度和召回率上提高了约5%~13%，对用户地理位置和社会环境的改善率提高了6%~11% Evaluation作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
@@ -14,7 +34,7 @@
   <entry>
     <title><![CDATA[推荐系统可解释性]]></title>
     <url>%2F2019%2F11%2F13%2F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7%2F</url>
-    <content type="text"><![CDATA[Introduction解释的两个维度： 显示样式（display style）： 相关用户或项目 用户或项目特征 文本解释 图像解释 社会解释 词簇 模型/方法 基于邻域 矩阵分解 主题建模 基于图 深度学习 知识图谱 关联分析 两种可解释性： 以人为方式工作的可解释模型。目前大多数属于这一类 只关注产品，将推荐模型视为一个复杂的黑盒。称为事后可解释性。 可解释性与时效性： 近些年的研究表明，这两项并不冲突，可以使用深度学习等方法来解决。]]></content>
+    <content type="text"><![CDATA[Introduction解释的两个维度： 显示样式（display style）： 相关用户或项目 用户或项目特征 文本解释 图像解释 社会解释 词簇 模型/方法 基于邻域 矩阵分解 主题建模 基于图 深度学习 知识图谱 关联分析 两种可解释性： 以人为方式工作的可解释模型。目前大多数属于这一类 只关注产品，将推荐模型视为一个复杂的黑盒。称为事后可解释性。 可解释性与时效性： 近些年的研究表明，这两项并不冲突，可以使用深度学习等方法来解决。 不同显示风格的解释基于相关用户和项目的解释 协同过滤和基于相关商品的解释 基于特征的解释 基于特征与基于内容密切相关，基于内容的推荐很至关，可以通过生成基于特性的解释来解释]]></content>
       <categories>
         <category>推荐系统</category>
       </categories>
@@ -43,26 +63,6 @@
       <tags>
         <tag>推荐系统</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[回归]]></title>
-    <url>%2F2019%2F10%2F08%2F%E5%9B%9E%E5%BD%92%2F</url>
-    <content type="text"><![CDATA[线性回归(Linear Regression)描述回归问题的标记$m$ 代表训练集中实例的数量 $x$ 代表特征/输入变量 $y$ 代表目标变量/输出变量 $\left( x,y \right)$ 代表训练集中的实例 $\left(x^\left(i\right),y^\left(i\right)\right)$ 代表第$i$ 个观察实例 $h$ 代表学习算法的解决方案或函数也称为假设（hypothesis） h的表达形式： 一种表达形式 $h_\theta \left( x \right)=\theta_{0} + \theta_{1}x_1 +···+\theta_nx_n$ 代价函数： $J(\theta_0,\theta_1,···\theta_n)=\frac{1}{2m}\sum_{i=1}^m (h_\theta(x^{(i)})-y^{(i)})^2$ 批量梯度下降算法： $\theta_j:=\theta_j-\alpha\frac{\partial }{\partial \theta_j}J(\theta_0,\theta_1,···\theta_n) $ 线性回归问题可以改写为： $\theta_0:=\theta_0-\alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)}·x_0^{(i)})$ $x_0^{(i)}=1$ $\theta_1:=\theta_1-\alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)}·x_1^{(i)})$ $···$ 梯度下降实践特征缩放 最简单的方法: $x_n=\frac{x_n-\mu_n}{s_n}$，其中$\mu_n$是平均值，$s_n$是范围 学习率 画出代价函数随迭代次数的图像。若出现上升情形，很可能是因为学习率$\alpha$取值过大 通常考虑$\alpha=0.03,0.3,1,3,10$ 正规方程算术求解出最优$\theta$ $\theta=(X^TX)^{-1}X^Ty$ 大多数情况下，$(X^TX)^{-1}$是可逆的，若不可逆，有以下两种情况： 特征值里有一些多余的特征，如果其中$x_1$和$x_2$是线性相关的，会导致不可逆，我们需要删除重复特征里的其中一个 特征数量太多(m&lt;=n)，导致不可逆。可以用较少的特征来反映尽可能多内容，或者考虑使用正规化的方法。 $\theta$的推导过程（略）]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
-      <tags>
-        <tag>回归</tag>
-        <tag>代价函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[机器学习引言]]></title>
-    <url>%2F2019%2F10%2F02%2F%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E5%BC%95%E8%A8%80%2F</url>
-    <content type="text"><![CDATA[监督学习(Supervised learning)数据集中的每个样本都有相应的“正确答案”，根据这些样本作出预测。 监督学习的类型 回归： 推出一个连续的输出 分类： 推出一组离散的结果 非监督学习(Unsupervised learning)在未加标签的数据中，试图找到隐藏的结构。 非监督学习的类型聚类，降维，隐马尔可夫模型等。 聚类的应用： 谷歌新闻：将非常多的新闻事件自动地聚类到一起 基因学的应用：根据基因将个体聚类到不同的类或组 社交网络的分析：根据Facebook或email自动给出朋友的分组 市场分析]]></content>
-      <categories>
-        <category>机器学习</category>
-      </categories>
   </entry>
   <entry>
     <title><![CDATA[Hexo]]></title>
