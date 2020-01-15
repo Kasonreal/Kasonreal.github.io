@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title></title>
+    <title><![CDATA[用户画像推荐系统]]></title>
     <url>%2F2020%2F01%2F13%2F%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%2F</url>
     <content type="text"><![CDATA[用户画像推荐系统用户画像是特征空间中的高维向量 每个标签是特征空间中的基向量 用户画像系统流程 一、明确问题 我们的需求和数据的匹配 我们是用来做分类、聚类、推荐还是回归等 数据的规模、重要特征的覆盖度等 二、 数据预处理 数据集成、冗余处理、冲突处理、采样、清洗、缺失值处理、噪声处理 三、 特征工程数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。 特征提取 业务日志 WEB公开数据抓取 第三方合作 特征处理 特征清洗 特征预处理： 特征选择、特征组合、降维等 特征监控 指标：时效性、覆盖率和异常值 可视化&amp;预警 四、 模型和算法]]></content>
+      <categories>
+        <category>推荐系统</category>
+      </categories>
+      <tags>
+        <tag>用户画像</tag>
+        <tag>推荐系统</tag>
+      </tags>
   </entry>
   <entry>
     <title></title>
     <url>%2F2020%2F01%2F11%2FFlink%E5%95%86%E5%93%81%E5%AE%9E%E6%97%B6%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%2F</url>
-    <content type="text"><![CDATA[Flink商品实时推荐系统]]></content>
+    <content type="text"><![CDATA[title: Flink商品实时推荐系统categories: 推荐系统tags: 推荐系统 用户画像mathjax: true Flink商品实时推荐系统]]></content>
   </entry>
   <entry>
     <title><![CDATA[What Are You Known For? Learning User Topical Profiles with Implicit and Explicit Footprints]]></title>
