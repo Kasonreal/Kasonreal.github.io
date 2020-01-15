@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被不同感知  具有相似画像的用户可能有巨大的地缘影响差异    建模地理画像挑战  经常分散，由于用户异">
+<meta name="description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户主题画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 给出已观测到的用户地理画像，对user的tag-location进行ranking预测未知的画像 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被">
 <meta name="keywords" content="用户画像">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization">
 <meta property="og:url" content="http://yoursite.com/2019/11/13/Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization/index.html">
 <meta property="og:site_name" content="Kason&#39;s Blog">
-<meta property="og:description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被不同感知  具有相似画像的用户可能有巨大的地缘影响差异    建模地理画像挑战  经常分散，由于用户异">
+<meta property="og:description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户主题画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 给出已观测到的用户地理画像，对user的tag-location进行ranking预测未知的画像 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-13T15:08:07.143Z">
+<meta property="og:updated_time" content="2019-12-29T12:48:32.609Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Geo-Social User Topical Profiles with Bayesian Hierarchical User Factorization">
-<meta name="twitter:description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被不同感知  具有相似画像的用户可能有巨大的地缘影响差异    建模地理画像挑战  经常分散，由于用户异">
+<meta name="twitter:description" content="Title 使用贝叶斯分层用户分解学习地理-社交用户主题画像  Research Objective在社会空间系统中，实现地理位置和用户画像的交互 给出已观测到的用户地理画像，对user的tag-location进行ranking预测未知的画像 Background and Problems 虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑  每个用户在不同地方被">
 
 
 
@@ -384,8 +384,9 @@
       
 
       
-        <h1 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h1><p> 使用<strong>贝叶斯分层用户分解</strong>学习地理-社交用户画像 </p>
+        <h1 id="Title"><a href="#Title" class="headerlink" title="Title"></a>Title</h1><p> 使用<strong>贝叶斯分层用户分解</strong>学习地理-社交用户主题画像 </p>
 <h2 id="Research-Objective"><a href="#Research-Objective" class="headerlink" title="Research Objective"></a>Research Objective</h2><p>在社会空间系统中，实现地理位置和用户画像的交互</p>
+<p>给出已观测到的用户地理画像，对user的tag-location进行ranking预测未知的画像</p>
 <h2 id="Background-and-Problems"><a href="#Background-and-Problems" class="headerlink" title="Background and Problems"></a>Background and Problems</h2><ol>
 <li><p>虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑</p>
 <ul>
@@ -395,23 +396,21 @@
 </li>
 </ul>
 </li>
-<li><p><strong>建模地理画像挑战</strong></p>
-<ul>
-<li><p>经常分散，由于用户异质性，地理画像中的受欢迎程度计数存在很大差异</p>
-</li>
-<li><p>由于多维性，通常非常稀疏</p>
-</li>
-</ul>
-</li>
-<li><p>先前研究</p>
-<ul>
-<li><p>用户聚合标签被用于生成用户地理画像</p>
-</li>
-<li><p>研究基于内容、评分的画像</p>
-</li>
-</ul>
-</li>
+<li><strong>建模地理画像挑战</strong></li>
 </ol>
+<p>可以采用BPTF（贝叶斯泊松张量分解）进行预测，但存在如下问题：</p>
+<ul>
+<li>经常分散，由于用户异质性，地理画像中的受欢迎程度计数存在很大差异</li>
+<li><p>由于多维性，通常非常稀疏</p>
+<ol>
+<li>先前研究</li>
+</ol>
+</li>
+<li><p>先前研究大多集中在揭示用户的主题画像或潜在兴趣，没有明确考虑地缘社会因素。</p>
+</li>
+<li>新兴的研究方向侧重于用Gamma-Poisson分布代替传统的高斯分布对离散数据建模</li>
+<li>利用各种背景信号来改善学习。包括文本、社交网络等</li>
+</ul>
 <h2 id="Method-s"><a href="#Method-s" class="headerlink" title="Method(s)"></a>Method(s)</h2><ol>
 <li>为了克服异质性，提出了一个两层的贝叶斯层级用户分解生成框架（bHUF），该框架很容易推广到深度用户分解。</li>
 <li>为了减少稀疏性，研究用户上下文（特别是地理位置和社会关系），针对多层因式分解方案的非共轭性,提出一个增强模型（bHUF+）。然后，使用NB分布的数据增强方案，开发一种有效的封闭式<strong>吉布斯抽样</strong>方案进行推理</li>
@@ -559,7 +558,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -668,7 +667,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
