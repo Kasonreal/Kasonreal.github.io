@@ -394,7 +394,12 @@ $P(A|B)=P(A)\frac{P(B|A)}{P(B)}$
 后验概率： $P(A|B)$
 似然函数
 $P(x|\theta)$
-$x$是已知确定的，$\theta$是变量，函数描述对于不同的模型参数，出现$x$个这样
+$x$是已知确定的，$\theta$是变量，函数描述对于不同的模型参数，出现$x$个这样样本点的概率
+最大似然估计（MLE)
+利用已知的样本信息，反推最具有可能（最大概率）导致这些样本结果出现的模型参数值
+使得似然函数的值最大的参数$\theta$就是我们要找的模型参数
+最大后验概率估计（MAP)
+MAP是求$\theta$使得$P(x_0|\theta)P(\theta)$最大。即最
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -562,8 +567,13 @@ Method(s)解决问题的理论/模型？
 Conclusionstrong conclusions
 weak conclusions
 构思
-E
-          ...
+Evaluation数据来源
+重要指标
+Baseline
+评价方案
+步骤
+SummaryReference
+          
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2020/02/21/论文研究模板/#more" rel="contents">
@@ -733,7 +743,25 @@ E
 二、 数据预处理
 数据集成、冗余处理、冲突处理、采样、清洗、缺失值处理、噪声处理
 
-三、 特
+三、 特征工程数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。
+特征提取
+
+业务日志
+WEB公开数据抓取
+第三方合作
+
+特征处理
+
+特征清洗
+特征预处理： 特征选择、特征组合、降维等
+
+特征监控
+
+指标：时效性、覆盖率和异常值
+可视化&amp;预警
+
+四、 模型和算法
+用户画像建模标签化是
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1064,7 +1092,10 @@ Background and Problems
 
 Method(s)
 解决了匿名化Web浏览历史记录的问题，同时保留服务实用性
-提出
+提出PBooster框架，用于量化用户隐私和在线服务质量之间的权衡，并进行验证
+
+Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？
+同时考虑隐私性和效用性，设置 $\lambda$=10时，可以返回尽可能高的隐私性，同时
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1234,7 +1265,11 @@ Background and Problems
 
 
 Method(s)
-解决了匿名化Web浏览历史记录的问题，同
+解决了匿名化Web浏览历史记录的问题，同时保留服务实用性
+提出PBooster框架，用于量化用户隐私和在线服务质量之间的权衡，并进行验证
+
+Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？
+同时考虑隐私性和效用性，设置 $\lambda$=10时，可以返回
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1399,7 +1434,15 @@ Method(s)
 回归： 推出一个连续的输出        
 分类： 推出一组离散的结果
 
-非监督学习(Unsupervised learning)在未加标签的数据中，试图找
+非监督学习(Unsupervised learning)在未加标签的数据中，试图找到隐藏的结构。
+非监督学习的类型聚类，降维，隐马尔可夫模型等。
+聚类的应用：
+谷歌新闻：将非常多的新闻事件自动地聚类到一起  
+基因学的应用：根据基因将个体聚类到不同的类或组  
+社交网络的分析：根据Facebook或email自动给出朋友的分组  
+市场分析  
+
+线性回归(Linear Regr
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1563,7 +1606,9 @@ Method(s)
 
 通过打印张量信息，得到
 
-123456In [2]: x = tf.constant([1,2.,3.3])xOut[2]:&lt;tf.Tensor: id=165
+123456In [2]: x = tf.constant([1,2.,3.3])xOut[2]:&lt;tf.Tensor: id=165, shape=(3,), dtype=float32, numpy=array([1. , 2. , 3.3],dtype=float32)&gt;
+
+其中id是TensorFlow中内部索引对象的编号，shape表示张量的形状，dtype表示张量的精度，张量numpy（）方法可以返回Numpy.
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1727,7 +1772,19 @@ Method(s)
 Research Objective在社会空间系统中，实现地理位置和用户画像的交互
 给出已观测到的用户地理画像，对user的tag-location进行ranking预测未知的画像
 Background and Problems
-虽然很
+虽然很多现有用户画像关注的每个用户的全局视角，但仍有一些重要的地缘社会因素需要考虑
+
+每个用户在不同地方被不同感知
+
+具有相似画像的用户可能有巨大的地缘影响差异
+
+
+
+建模地理画像挑战
+
+可以采用BPTF（贝叶斯泊松张量分解）进行预测，但存在如下问题：
+
+经常分散，由于用户异质性，地理画像中的受欢迎程度计
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1911,7 +1968,16 @@ Background and Problems
 
 两种可解释性：
 
-以人为方式工作的可解释模型。目
+以人为方式工作的可解释模型。目前大多数属于这一类
+只关注产品，将推荐模型视为一个复杂的黑盒。称为事后可解释性。
+
+可解释性与时效性：
+近些年的研究表明，这两项并不冲突，可以使用深度学习等方法来解决。
+
+不同显示风格的解释基于相关用户和项目的解释
+协同过滤和基于相关商品的解释
+存在信任性和可依赖性问题，因为我并不认识相似用户。
+基
           ...
           <!--noindex-->
           <div class="post-button text-center">
