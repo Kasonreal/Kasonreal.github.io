@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[概率论]]></title>
+    <url>%2F2020%2F02%2F25%2F%E6%A6%82%E7%8E%87%E8%AE%BA%2F</url>
+    <content type="text"><![CDATA[贝叶斯公式 $P(A|B)=P(A)\frac{P(B|A)}{P(B)}$ 先验概率： $P(A)$ 可能性函数： $P(B|A)P(B)$ 后验概率： $P(A|B)$ 似然函数 $P(x|\theta)$ $x$是已知确定的，$\theta$是变量，函数描述对于不同的模型参数，出现$x$个这样样本点的概率 最大似然估计（MLE) 利用已知的样本信息，反推最具有可能（最大概率）导致这些样本结果出现的模型参数值 使得似然函数的值最大的参数$\theta$就是我们要找的模型参数 最大后验概率估计（MAP) MAP是求$\theta$使得$P(x_0|\theta)P(\theta)$最大。即最大化$P(\theta|x_0)$ MAP就是多个作为因子的先验概率$P(\theta)$]]></content>
+      <categories>
+        <category>理论基础</category>
+      </categories>
+      <tags>
+        <tag>概率论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Neurec]]></title>
+    <url>%2F2020%2F02%2F21%2F%E8%AE%BA%E6%96%87%E7%A0%94%E7%A9%B6%E6%A8%A1%E6%9D%BF%2F</url>
+    <content type="text"><![CDATA[TitleResearch ObjectiveBackground and Problems为什么要研究？ 先前研究阶段 有哪些困难？ Method(s)解决问题的理论/模型？ 是否基于前人的方法？ Conclusionstrong conclusions weak conclusions 构思 Evaluation数据来源 重要指标 Baseline 评价方案 步骤 SummaryReference]]></content>
+      <categories>
+        <category>论文合集</category>
+      </categories>
+      <tags>
+        <tag>reural recommender library</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[用户画像推荐系统]]></title>
     <url>%2F2020%2F01%2F13%2F%E7%94%A8%E6%88%B7%E7%94%BB%E5%83%8F%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F%2F</url>
-    <content type="text"><![CDATA[用户画像推荐系统用户画像是特征空间中的高维向量 每个标签是特征空间中的基向量 用户画像系统流程 一、明确问题 我们的需求和数据的匹配 我们是用来做分类、聚类、推荐还是回归等 数据的规模、重要特征的覆盖度等 二、 数据预处理 数据集成、冗余处理、冲突处理、采样、清洗、缺失值处理、噪声处理 三、 特征工程数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。 特征提取 业务日志 WEB公开数据抓取 第三方合作 特征处理 特征清洗 特征预处理： 特征选择、特征组合、降维等 特征监控 指标：时效性、覆盖率和异常值 可视化&amp;预警 四、 模型和算法]]></content>
+    <content type="text"><![CDATA[用户画像推荐系统用户画像是特征空间中的高维向量 每个标签是特征空间中的基向量 用户画像系统流程 一、明确问题 我们的需求和数据的匹配 我们是用来做分类、聚类、推荐还是回归等 数据的规模、重要特征的覆盖度等 二、 数据预处理 数据集成、冗余处理、冲突处理、采样、清洗、缺失值处理、噪声处理 三、 特征工程数据和特征决定了机器学习的上限，而模型和算法只是逼近这个上限而已。 特征提取 业务日志 WEB公开数据抓取 第三方合作 特征处理 特征清洗 特征预处理： 特征选择、特征组合、降维等 特征监控 指标：时效性、覆盖率和异常值 可视化&amp;预警 四、 模型和算法 用户画像建模标签化是用户定性画像的核心，需要考虑如下问题： 如何定义和表示标签 如何对标签进行表示 如何对标签进行推理 如何验证标签 以视频画像为例 电商推荐系统基于内容 基于协同过滤 用户画像举例：医学用户画像 音乐推荐系统]]></content>
       <categories>
         <category>推荐系统</category>
       </categories>
@@ -28,6 +50,17 @@
     <title><![CDATA[What Are You Known For? Learning User Topical Profiles with Implicit and Explicit Footprints]]></title>
     <url>%2F2019%2F12%2F26%2FWhat%20Are%20You%20Known%20For%20Learning%20User%20Topical%20Profiles%20with%20Implicit%20and%20Explicit%20Footprints%2F</url>
     <content type="text"><![CDATA[Title 你以什么著称？通过隐式和显示足迹学习用户主题画像 Research Objective通过多个足迹（多源异构）构造用户主题画像 Background and Problems 为什么 挑战 先前研究 Method(s) 解决了匿名化Web浏览历史记录的问题，同时保留服务实用性 提出PBooster框架，用于量化用户隐私和在线服务质量之间的权衡，并进行验证 Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ 同时考虑隐私性和效用性，设置 $\lambda$=10时，可以返回尽可能高的隐私性，同时保持与原始数据相当的效用。 Evaluation作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
+      <categories>
+        <category>论文合集</category>
+      </categories>
+      <tags>
+        <tag>用户画像</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Protecting User Privacy An Approach for Untraceable Web Browsing History and Unambiguous User Profiles]]></title>
+    <url>%2F2019%2F12%2F25%2FProtecting%20User%20Privacy%20An%20Approach%20for%20Untraceable%20Web%20Browsing%20History%20and%20Unambiguous%20User%20Profiles%2F</url>
+    <content type="text"><![CDATA[Title 保护用户隐私：一种不可跟踪的网页浏览历史和明确的用户画像方法 Research Objective保护用户的隐私的同时保留他们的网页浏览历史的效用。 Background and Problems 为什么 挑战 先前研究 Method(s) 解决了匿名化Web浏览历史记录的问题，同时保留服务实用性 提出PBooster框架，用于量化用户隐私和在线服务质量之间的权衡，并进行验证 Conclusion作者给了哪些结论，哪些是strong conclusions,哪些是weak的conclusions？哪些构思？ 同时考虑隐私性和效用性，设置 $\lambda$=10时，可以返回尽可能高的隐私性，同时保持与原始数据相当的效用。 Evaluation作者如何评估自己的方法，实验的setup是什么样的，有没有问题或者可以借鉴的地方 数据来源+重要指标+模型步骤+每个步骤得出的结论 Summary写完笔记之后最后填，概述文章的内容。切记需要通过自己的思考，用自己的语言描述 Notes额外笔记 Reference(optional)列出相关性高的文献，一遍之后可以继续track]]></content>
       <categories>
         <category>论文合集</category>
       </categories>
