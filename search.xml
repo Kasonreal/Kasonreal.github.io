@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[概率论]]></title>
     <url>%2F2020%2F02%2F25%2F%E6%A6%82%E7%8E%87%E8%AE%BA%2F</url>
-    <content type="text"><![CDATA[贝叶斯公式 $P(A|B)=P(A)\frac{P(B|A)}{P(B)}$ 先验概率： $P(A)$ 可能性函数： $P(B|A)P(B)$ 后验概率： $P(A|B)$ 似然函数 $P(x|\theta)$ $x$是已知确定的，$\theta$是变量，函数描述对于不同的模型参数，出现$x$个这样样本点的概率 最大似然估计（MLE) 利用已知的样本信息，反推最具有可能（最大概率）导致这些样本结果出现的模型参数值 使得似然函数的值最大的参数$\theta$就是我们要找的模型参数 最大后验概率估计（MAP) MAP是求$\theta$使得$P(x_0|\theta)P(\theta)$最大。即最大化$P(\theta|x_0)$ MAP就是多个作为因子的先验概率$P(\theta)$]]></content>
+    <content type="text"><![CDATA[贝叶斯公式 $P(A|B)=P(A)\frac{P(B|A)}{P(B)}$ 先验概率： $P(A)$ 可能性函数： $P(B|A)P(B)$ 后验概率： $P(A|B)$ 似然函数 $P(x|\theta)$ $x$是已知确定的，$\theta$是变量，函数描述对于不同的模型参数，出现$x$个这样样本点的概率 最大似然估计（MLE) 利用已知的样本信息，反推最具有可能（最大概率）导致这些样本结果出现的模型参数值 使得似然函数的值最大的参数$\theta$就是我们要找的模型参数 &lt; !—more—&gt; 最大后验概率估计（MAP) MAP是求$\theta$使得$P(x_0|\theta)P(\theta)$最大。即最大化$P(\theta|x_0)$ MAP就是多个作为因子的先验概率$P(\theta)$]]></content>
       <categories>
         <category>理论基础</category>
       </categories>
@@ -12,7 +12,7 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Neurec]]></title>
+    <title><![CDATA[论文模板]]></title>
     <url>%2F2020%2F02%2F21%2F%E8%AE%BA%E6%96%87%E7%A0%94%E7%A9%B6%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[TitleResearch ObjectiveBackground and Problems为什么要研究？ 先前研究阶段 有哪些困难？ Method(s)解决问题的理论/模型？ 是否基于前人的方法？ Conclusionstrong conclusions weak conclusions 构思 Evaluation数据来源 重要指标 Baseline 评价方案 步骤 SummaryReference]]></content>
       <categories>
